@@ -9,16 +9,14 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
-    private static Connection connection;
-    static {
+
+    public static Connection getConnection() {
+        Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static Connection getConnection() {
         return connection;
     }
     // реализуйте настройку соеденения с БД
